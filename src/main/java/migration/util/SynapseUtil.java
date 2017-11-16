@@ -137,7 +137,6 @@ public class SynapseUtil {
     }
 
     public static boolean isAdvancedThrottlingEnabled() {
-        APIManagerConfiguration config = ServiceHolder.getAPIManagerConfigurationService().getAPIManagerConfiguration();
-        return Boolean.parseBoolean(config.getFirstProperty(Constants.ENABLE_THROTTLING_CONFIGURATIONS));
+        return false;
     }
 }

@@ -26,6 +26,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.wso2.carbon.apimgt.impl.APIConstants;
+
 import org.wso2.carbon.base.MultitenantConstants;
 import org.wso2.carbon.registry.core.RegistryConstants;
 import org.wso2.carbon.registry.core.exceptions.RegistryException;
@@ -203,7 +204,8 @@ public class ResourceUtil {
             Transformer transformer = transformerFactory.newTransformer();
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
             DOMSource source = new DOMSource(document);
-            StreamResult result = new StreamResult(file);
+            File file1 = new File (file.getAbsolutePath());
+            StreamResult result = new StreamResult(file1);
             transformer.transform(source, result);
         } catch (TransformerConfigurationException e) {
             handleException("Could not initiate TransformerFactory Builder.", e);
